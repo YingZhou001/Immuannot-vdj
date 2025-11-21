@@ -39,7 +39,7 @@ same time when annotating human assembly.
 | D | ~10-20bp | ~80bp |
 | J | ~50bp | ~100bp |
 
-For indetified joint region, we suggest to use TRUST4's annotator to resolve the CDR3 sequences. [2]
+For indentified V(D)J joint region, we suggest to use TRUST4's annotator to resolve the CDR3 sequences. [2]
 
 [1] Lees, W.D., Saha, S., Yaari, G. and Watson, C.T., 2024. Digger: directed annotation of immunoglobulin and T cell receptor V, D, and J gene sequences and assemblies. Bioinformatics, 40(3), p.btae144. \
 [2] Song, L., Cohen, D., Ouyang, Z., Cao, Y., Hu, X. and Liu, X.S., 2021. TRUST4: immune repertoire reconstruction from bulk and single-cell RNA-seq data. Nature methods, 18(6), pp.627-630.
