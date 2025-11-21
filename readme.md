@@ -5,7 +5,7 @@ It can be used to annotate gene strucutre such as leader parts and RSS for assem
 
 A manuscript is in preparing.
 
-Last update date : 6/17/2024
+Last update date : 11/21/2025
 
 Content
 --------
