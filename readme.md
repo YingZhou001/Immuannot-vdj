@@ -1,7 +1,7 @@
 # Immuannot-vdj pipeline introduction
 
 Immuannot-vdj is designed to analyze Immunoglobulin (IG) and T cell receptor (TR) genes.
-It can be used to annotate gene strucutre such as leader parts and RSS for assemblies, DNA reads (HiFi and Ont R10), and full length RNA transcripts.
+It can be used to annotate gene structures such as leader parts and RSS for assemblies and long reads (HiFi, Ont R10, RNA transcripts).
 
 A manuscript is in preparing.
 
