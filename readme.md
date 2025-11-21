@@ -14,10 +14,10 @@ Content
 - [Installation](#installation)
     - [Download](#download)
     - [Dependency](#dependency)
+    - [Options](#options)
 - [Input and Output](#input-and-output)
-- [An Example](#an-example)
+- [Examples](#examples)
 - [Limitation](#limitation)
-- [Todo list](#todo-list)
 
 # Detection Strategy
 
@@ -50,7 +50,7 @@ For indetified joint region, we suggest to use TRUST4's annotator to resolve the
 
 ## Download
 
-1) Download Immuannot-bt:
+1) Download Immuannot-vdj:
 
 ```bash
 git clone https://github.com/YingZhou001/Immuannot-vdj.git
@@ -62,14 +62,14 @@ git clone https://github.com/YingZhou001/Immuannot-vdj.git
 wget https://ftp.ebi.ac.uk/pub/databases/imgt/ligm/imgt.dat.Z -O dat.Z 
 ```
 
-3) Prepare the reference data set for Immuannot-bt
+3) Prepare the reference data set for Immuannot-vdj
 
 ```bash
-scriptdir=Immuannot-bt/script
+scriptdir=src.v0.08
 refpref=ref
 dat=dat.Z
-bash ${scriptdir}/mkref.sh ${dat} ${refpref}
 ## reference will be outputing into a folder named as ${refpref}.${date}
+bash ${scriptdir}/mkref.sh ${dat} ${refpref}
 ```
 
 [\[top\]](#content)
@@ -81,9 +81,11 @@ Immuannot-bt depends on:
 * minimap2 (2.27-r1193) 
 * seqtk (1.4-r130-dirty)
 
-All source codes and pre-build binaries can be found in folder 'dep-tools'. 
+All source codes and pre-build binaries can be found in folder 'src/dep-tools'. 
 If any pre-build binary does work, you may need to re-build it from the source
-and copy it to the folder 'dep-tools/bin'.
+and copy it to the folder 'dep-tools/bin'. Otherwise user need to modify the variables 
+'MINIMAP2' and 'SEQTK' in 'src/immuannot-vdj.sh'.
+
 
 [\[top\]](#content)
 
@@ -113,29 +115,29 @@ script=../src/immuannot-vdj.sh # make use this path is correct
 refdir=ref.2025-11-21 # make sure the reference folder is correct
 
 ## run on hifi dna reads
-  tar=dna.fa.gz
-  outdir=hifi_dna-test
-  nthread=10
-  time bash ${script} --hifidna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
+tar=dna.fa.gz
+outdir=hifi_dna-test
+nthread=10
+time bash ${script} --hifidna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
 
 
-  ## run ont UL dna reads
-  tar=ul_dna.fa.gz
-  outdir=ul_dna-test
-  nthread=10
-  time bash ${script} --ontuldna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
+## run ont UL dna reads
+tar=ul_dna.fa.gz
+outdir=ul_dna-test
+nthread=10
+time bash ${script} --ontuldna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
 
-  ## run rna transcripts reads
-  tar=rna.fa.gz
-  outdir=rna-test
-  nthread=10
-  time bash ${script} --rna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
+## run rna transcripts reads
+tar=rna.fa.gz
+outdir=rna-test
+nthread=10
+time bash ${script} --rna -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
 
-  ## run on asssembly
-  tar=asm2.fa.gz
-  outdir=asm-test
-  nthread=10
-  time bash ${script} --asm -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
+## run on asssembly
+tar=asm.fa.gz
+outdir=asm-test
+nthread=10
+time bash ${script} --asm -r ${refdir} -t ${tar} -o ${outdir} -n ${nthread}
 
 ```
 
